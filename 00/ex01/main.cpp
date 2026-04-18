@@ -4,10 +4,10 @@
 
 int is_valid_input(const std::string str)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	while(str[i] != '\0')
+	while(i < str.length())
 	{
 		if(str[i] >= '!' && str[i] <= '~')
 			return(1);
@@ -63,7 +63,7 @@ bool initiate_contact(Contact &contact)
             return false;
 		if(is_valid_input(command) == 1)
 		{
-			contact.setDarkestSecret(command);
+			contact.setPhoneNumber(command);
 			break;
 		}
 	}
@@ -101,9 +101,7 @@ int main()
 			phoneBook.addContact(&contact);
 		}
 		else if(command == "SEARCH")
-		{
-
-		}
+			phoneBook.searchContact();
 		else if(command == "EXIT")
 			break;
 	}
