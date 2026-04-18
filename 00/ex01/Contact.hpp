@@ -16,6 +16,11 @@ class Contact
 		Contact();
 		void setContact(std::string first, std::string last,
 			std::string nick, std::string phone, std::string secret);
+		void setFirstName(std::string first);
+		void setLastName(std::string last);
+		void setNickname(std::string nick);
+		void setPhoneNumber(std::string phone);
+		void setDarkestSecret(std::string secret);
 		std::string getFirstName() const;
 		std::string getLastName() const;
 		std::string getNickname() const;
